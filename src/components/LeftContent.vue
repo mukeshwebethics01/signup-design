@@ -7,8 +7,11 @@
 export default {
     name: "left-section"
 }
+
 </script>
 <style lang="scss" scoped>
+@import "../assets/mediaqueries/mediaqueries.scss";
+
 .left-section {
     width: 50%;
     background: #384BD5;
@@ -20,10 +23,19 @@ export default {
     &-img {
         max-width: 100%;
         height: auto;
+
+        @include tab768 {
+            height: 100%;
+        }
+
+
+    }
+
+    @include tab768 {
+        height: 10vh;
+        width: 100%;
+        padding-block: 10px;
     }
 
 }
-
-
-
 </style>

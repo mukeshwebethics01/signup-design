@@ -17,14 +17,29 @@ export default {
         LeftContent,
     }
 }
+
+
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "../assets/mediaqueries/mediaqueries.scss";
+
 .main-layout {
     display: flex;
+    flex-direction: row;
+
+    @include tab768 {
+        flex-direction: column !important;
+
+
+    }
 }
 
 .main-layout-two {
     width: 50%;
+
+    @include tab768 {
+        width: 100%;
+    }
 }
 </style>
