@@ -1,13 +1,5 @@
-<script setup>
-
+<script setup lang="ts">
 </script>
-
 <template>
-  <h2>Hello</h2>
+  <router-view />
 </template>
-
-<style lang="scss" scoped>
-h2 {
-  color: blue;
-}
-</style>
