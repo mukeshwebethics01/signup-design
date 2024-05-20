@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 // import SignUp from "../views/SignUp.vue"
+// @ts-ignore
 import  Rightside from "../views/Rightside.vue"
+// @ts-ignore
 import Authlayout from '@/Layout/Authlayout.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +28,7 @@ children:[
     {
       path: '/',
       name: 'SignUp',
+// @ts-ignore
       component: () => import('../views/SignUp.vue')
     },
 ]
