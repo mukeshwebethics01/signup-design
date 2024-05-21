@@ -1,73 +1,127 @@
 <template>
-    <div class="card flex justify-content-center">
-        <Stepper>
-            <StepperPanel header="Header I">
-                <template #content="{ nextCallback }">
-                    <div class="flex flex-column h-12rem">
-                        <div
-                            class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
-                            Content I</div>
-                    </div>
-                    <div class="flex pt-4 justify-content-end">
-                        <Button label="Next" icon="pi pi-arrow-right" iconPos="right" @click="nextCallback" />
-                    </div>
+    <div class="signup-container">
+        <div class="card steper ">
+            <Steps :model="items" class="custom-steps" :readonly="false">
+                <template #item="{ item, active }">
+
+                    <span
+                        :class="['inline-flex align-items-center justify-content-center align-items-center border-circle border-gray-500 border-1 h-2rem w-2rem z-1 cursor-pointer', { 'bg-blue-600 text-white': active, 'surface-overlay text-gray-500 ': !active }]">
+                        <i :class="[item.icon, 'text-sm ']" />
+                    </span>
                 </template>
-            </StepperPanel>
-            <StepperPanel header="Header II">
-                <template #content="{ prevCallback, nextCallback }">
-                    <div class="flex flex-column h-12rem">
-                        <div
-                            class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
-                            Content II</div>
-                    </div>
-                    <div class="flex pt-4 justify-content-between">
-                        <Button label="Back" severity="secondary" icon="pi pi-arrow-left" @click="prevCallback" />
-                        <Button label="Next" icon="pi pi-arrow-right" iconPos="right" @click="nextCallback" />
-                    </div>
-                </template>
-            </StepperPanel>
-            <StepperPanel header="Header III">
-                <template #content="{ prevCallback }">
-                    <div class="flex flex-column h-12rem">
-                        <div
-                            class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium">
-                            Content III</div>
-                    </div>
-                    <div class="flex pt-4 justify-content-start">
-                        <Button label="Back" severity="secondary" icon="pi pi-arrow-left" @click="prevCallback" />
-                    </div>
-                </template>
-            </StepperPanel>
-        </Stepper>
+            </Steps>
+        </div>
+        <h2 class="h2tag">Welcome to Path Loop</h2>
+        <p class="ptag">You're just a few steps away from effectively managing your business operations.</p>
+        <div class="card flex justify-content-center email-inputs">
+            <div class="flex flex-column gap-2 emailcontainer">
+                <label for="username" class="input-label">Email</label>
+                <InputText id="username" v-model="value" aria-describedby="username-help"
+                    placeholder="example@example.com" />
+                <div class="card flex justify-content-center">
+                    <Button class="btn" label="Submit">Sign Up <i class="pi pi-arrow-right"></i></Button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p>Already have an account? <a href="#">Sign-in</a></p>
+        </div>
     </div>
+
 </template>
+
 <script setup>
-import Steps from 'primevue/steps';
+
 import 'primeicons/primeicons.css'
-import IconField from 'primevue/iconfield';
-import InputIcon from 'primevue/inputicon';
-import InputText from 'primevue/inputtext';
-import Password from 'primevue/password';
+import "primeflex/primeflex.css";
+
+import Steps from 'primevue/steps';
+
 import Button from 'primevue/button';
-import Stepper from 'primevue/stepper';
-import StepperPanel from 'primevue/stepperpanel';
-import ToggleButton from 'primevue/togglebutton';
+import InputText from 'primevue/inputtext';
 import { ref } from "vue";
-const active = ref(0);
-const completed = ref(false);
-const products = ref();
-const name = ref();
-const email = ref();
-const password = ref();
-const option1 = ref(false);
-const option2 = ref(false);
-const option3 = ref(false);
-const option4 = ref(false);
-const option5 = ref(false);
-const option6 = ref(false);
-const option7 = ref(false);
-const option8 = ref(false);
-const option9 = ref(false);
-const option10 = ref(false);
+
+const items = ref([
+    {
+        icon: 'pi pi-check'
+    },
+    {
+        icon: 'pi pi-check'
+    },
+    {
+        icon: 'pi pi-check'
+    },
+    {
+        icon: 'pi pi-check'
+    }
+]);
 </script>
-<style></style>
+
+<style lang="scss" scoped>
+@import "../assets/mediaqueries/mediaqueries.scss";
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 460px;
+    padding-inline: 10px;
+
+    @include tab768 {
+        margin-top: 40px;
+    }
+
+    .email-inputs {
+        margin-bottom: 100px;
+    }
+
+    .h2tag {
+        color: #384BD5;
+        font-weight: 700;
+        size: 22px;
+        line-height: 28.64px;
+        text-align: center;
+    }
+
+    .ptag {
+        color: #696C71;
+        line-height: 28px;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .email-inputs {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        font-size: 16px;
+        background: #384BD5;
+        border: none;
+        margin-top: 24px;
+        &:hover {
+            background: #0e24cc;
+        }
+    }
+}
+.emailcontainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .input-label {
+        font-size: 18px;
+        font-weight: 500;
+        color: black;
+    }
+}
+.steper {
+    width: 100%;
+    margin-bottom: 90px;
+}
+
+</style>

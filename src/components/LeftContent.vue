@@ -7,7 +7,6 @@
 export default {
     name: "left-section"
 }
-
 </script>
 <style lang="scss" scoped>
 @import "../assets/mediaqueries/mediaqueries.scss";
@@ -27,8 +26,6 @@ export default {
         @include tab768 {
             height: 100%;
         }
-
-
     }
 
     @include tab768 {

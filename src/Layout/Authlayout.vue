@@ -37,6 +37,9 @@ export default {
 
 .main-layout-two {
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @include tab768 {
         width: 100%;
