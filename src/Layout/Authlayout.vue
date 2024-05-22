@@ -1,9 +1,9 @@
 <template>
     <!-- <SignUp/> -->
-    <div class="main-layout">
+    <div class="main-layout flex flex-row">
 
         <LeftContent />
-        <div class="main-layout-two">
+        <div class="main-layout-two w-6 flex justify-content-center align-items-center">
             <router-view />
         </div>
     </div>
@@ -25,24 +25,18 @@ export default {
 @import "../assets/mediaqueries/mediaqueries.scss";
 
 .main-layout {
-    display: flex;
-    flex-direction: row;
+
 
     @include tab768 {
         flex-direction: column !important;
-
-
+        align-items: center;
     }
 }
 
 .main-layout-two {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     @include tab768 {
-        width: 100%;
+        width: 100% !important;
+        height: 100vh;
     }
 }
 </style>

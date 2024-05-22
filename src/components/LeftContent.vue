@@ -29,10 +29,7 @@ export default {
     }
 
     @include tab768 {
-        height: 10vh;
-        width: 100%;
-        padding-block: 10px;
+        display: none;
     }
-
 }
 </style>
