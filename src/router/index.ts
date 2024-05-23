@@ -18,6 +18,7 @@ children:[
     {
       path: '/confirm-email',
       name: 'confirm-email',
+// @ts-ignore
       component: () => import('../views/ConfirmEmail.vue')
     },
   
