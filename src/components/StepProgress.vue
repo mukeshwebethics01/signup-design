@@ -25,7 +25,7 @@ export default {
     setup() {
         const items = ref([
             { icon: 'pi pi-check' },
-            { icon: 'pi pi-circle-fill' },
+            { icon: 'pi pi-circle-on' },
             { icon: 'pi pi-circle-fill' },
             { icon: 'pi pi-circle-fill' }
         ]);
@@ -33,10 +33,9 @@ export default {
         return { items };
     }
 };
-
 </script>
 <style lang="scss" scoped>
-@import "../../assets/mediaqueries/mediaqueries.scss";
+@import "../assets/mediaqueries/mediaqueries.scss";
 
 .steper {
     margin-bottom: 90px;
@@ -46,5 +45,4 @@ export default {
         margin-bottom: 45px;
     }
 }
-
 </style>

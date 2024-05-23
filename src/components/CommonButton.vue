@@ -1,7 +1,8 @@
 <template>
-    <div class="card flex justify-content-center">
-        <Button class="btn w-full flex justify-content-center border-none gap-2" label="Submit">{{ btnText }} <i
-                class="pi pi-arrow-right"></i></Button>
+    <div class="card ">
+        <Button class="btn w-full flex justify-content-center align-items-center border-none gap-2 font-medium"
+            label="Submit">{{ btnText
+            }} <i class="pi pi-arrow-right"></i></Button>
     </div>
 </template>
 <script>
@@ -23,9 +24,10 @@ export default {
 
 </script>
 <style lang="scss" scoped>
-@import "../../assets/colors/colors.scss";
+@import "../assets/colors/colors.scss";
 
 .btn {
     background: $themeBlue;
+    border-radius: 6px;
 }
 </style>

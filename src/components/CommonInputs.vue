@@ -1,7 +1,9 @@
 <template>
-    <label for="username" class="input-label font-medium text-lg">Email</label>
-    <InputText class="outline-none inputplace" id="username" v-model="value" aria-describedby="username-help"
-        :placeholder="placeholder" />
+    <div class="flex flex-column">
+        <label for="email" class="input-label font-medium text-lg">Email</label>
+        <InputText class="outline-none inputplace" id="email" v-model="value" aria-describedby="username-help"
+            :placeholder="placeholder" />
+    </div>
 </template>
 <script>
 import InputText from 'primevue/inputtext';
@@ -25,10 +27,17 @@ export default {
 
 </script>
 <style lang="scss" scoped>
-@import "../../assets/colors/colors.scss";
+@import "../assets/colors/colors.scss";
 
+.inputplace {
+    border-radius: 6px;
+}
 
 .inputplace::placeholder {
     color: $lightGray;
+}
+
+.inputplace:focus {
+    box-shadow: none;
 }
 </style>

@@ -1,5 +1,11 @@
 import './assets/main.scss'
+import "./assets/colors/colors.scss"
+import "./assets/mediaqueries/mediaqueries.scss"
 import 'primevue/resources/themes/aura-light-green/theme.css';
+import 'primevue/resources/themes/saga-blue/theme.css'; 
+import 'primevue/resources/primevue.min.css';  
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css'; 
 import PrimeVue from 'primevue/config';
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';

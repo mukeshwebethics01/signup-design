@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2 class="h2tag text-center font-bold">{{ heading }}</h2>
-        <p class="ptag text-center">{{ subheading }}</p>
+        <p class="ptag text-center text-base">{{ subheading }}</p>
     </div>
 </template>
 <script>
@@ -20,7 +20,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "../../assets/colors/colors.scss";
+@import "../assets/colors/colors.scss";
 
 .h2tag {
     color: $themeBlue;
@@ -30,5 +30,6 @@ export default {
 .ptag {
     color: $lightGray;
     line-height: 28px;
+
 }
 </style>
