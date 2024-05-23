@@ -31,11 +31,6 @@
     </div>
   </div>
 
-
-
-
-
-
   <!-- <div class="flex flex-column align-items-center ">
     <span class="flex align-items-center justify-content-center gap-2"> <i class="pi pi-arrow-left "></i>Change Email
       Address</span>
@@ -94,7 +89,6 @@ const value = ref(null);
   padding-inline: 20px;
   margin-top: auto;
   margin-bottom: auto;
-
   .chngeText {
     color: $lightGray;
   }
