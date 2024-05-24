@@ -25,7 +25,7 @@ export default {
     setup() {
         const items = ref([
             { icon: 'pi pi-check' },
-            { icon: 'pi pi-circle-on' },
+            { icon: 'pi pi-circle-fill' },
             { icon: 'pi pi-circle-fill' },
             { icon: 'pi pi-circle-fill' }
         ]);

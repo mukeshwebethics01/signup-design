@@ -1,7 +1,7 @@
 <template>
 
 
-  <div class="flex confirmemail flex-column h-full justify-content-between">
+  <div class="flex confirmemail w-full flex-column h-full justify-content-between">
     <div class="signup-container flex flex-column align-items-center">
       <span class="flex text-base mb-5 align-items-center justify-content-center gap-2 chngeText"> <i
           class="pi pi-arrow-left "></i>Change Email
@@ -16,14 +16,11 @@
       <a href="#"></a>
       <div class="card flex justify-content-center email-inputs w-full">
         <div class="flex flex-column gap-2 emailcontainer w-full flex ">
-          <div class="card flex justify-content-center gap-2">
-            <InputText class="confirm-input" placeholder="-" type="text" v-model="value" />
-            <InputText class="confirm-input" placeholder="-" type="text" v-model="value" />
-            <InputText class="confirm-input" placeholder="-" type="text" v-model="value" />
-            <InputText class="confirm-input" placeholder="-" type="text" v-model="value" />
-            <InputText class="confirm-input" placeholder="-" type="text" v-model="value" />
-            <InputText class="confirm-input" placeholder="-" type="text" v-model="value" />
+
+          <div class="card flex justify-content-center">
+            <InputOtp v-model="value" :length="6" placeholder="ok" />
           </div>
+
           <CommonButton class="mt-3" btnText="Confirm" />
         </div>
       </div>
@@ -31,32 +28,14 @@
     </div>
   </div>
 
-  <!-- <div class="flex flex-column align-items-center ">
-    <span class="flex align-items-center justify-content-center gap-2"> <i class="pi pi-arrow-left "></i>Change Email
-      Address</span>
-    <StepProgress />
-    <Title heading="Confirm your email" subheading="We’ve sent a code to your email: example@exam.com" />
-    <div class="card flex justify-content-center gap-2">
-      <InputText class="confirm-input" type="text" v-model="value" />
-      <InputText class="confirm-input" type="text" v-model="value" />
-      <InputText class="confirm-input" type="text" v-model="value" />
-      <InputText class="confirm-input" type="text" v-model="value" />
-      <InputText class="confirm-input" type="text" v-model="value" />
-      <InputText class="confirm-input" type="text" v-model="value" />
-    </div>
-
-    <CommonButton btnText="Confirm" />
-  </div> -->
 </template>
 <script setup>
-import InputText from 'primevue/inputtext';
-import 'primeicons/primeicons.css'
-import StepProgress from '../components/StepProgress.vue'
+import 'primeicons/primeicons.css';
+import StepProgress from '../components/StepProgress.vue';
 import Title from '../components/Titles.vue';
 import CommonButton from "../components/CommonButton.vue";
-// import CommonInputs from "../components/CommonInputs.vue";
+import InputOtp from 'primevue/inputotp';
 import { ref } from 'vue';
-
 const value = ref(null);
 </script>
 <style lang="scss" scoped>
@@ -64,24 +43,6 @@ const value = ref(null);
 
 .confirmemail {
   max-width: 460px;
-  width: 100%;
-}
-
-
-.confirm-input {
-  height: 40px;
-  width: 40px;
-  padding-top: 18px;
-
-  &::placeholder {
-    padding-left: 5px;
-    color: #D1D5DB;
-
-  }
-
-  &:focus {
-    box-shadow: none;
-  }
 }
 
 .signup-container {
@@ -89,6 +50,7 @@ const value = ref(null);
   padding-inline: 20px;
   margin-top: auto;
   margin-bottom: auto;
+
   .chngeText {
     color: $lightGray;
   }

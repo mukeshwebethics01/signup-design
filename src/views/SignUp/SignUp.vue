@@ -8,7 +8,7 @@
             <div class="card flex justify-content-center email-inputs w-full">
                 <div class="flex flex-column gap-2 emailcontainer w-full flex ">
                     <CommonInputs placeholder="example@example.com" />
-                    <CommonButton class="mt-3" btnText="Sign Up" />
+                    <CommonButton class="mt-3" btnText="Sign Up" @click="navigateToNextPage" />
                 </div>
             </div>
 
@@ -18,6 +18,7 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router';
 import StepProgress from '../../components/StepProgress.vue'
 import Title from '../../components/Titles.vue';
 import CommonButton from "../../components/CommonButton.vue";
@@ -25,11 +26,15 @@ import Footer from "../../components/Footer.vue"
 import 'primeicons/primeicons.css';
 import "primeflex/primeflex.css";
 import CommonInputs from "../../components/CommonInputs.vue";
+
+const navigateToNextPage = () => {
+    const router = useRouter();
+    router.push('/confirm-email');
+}
 </script>
 <style lang="scss" scoped>
 @import "../../assets/mediaqueries/mediaqueries.scss";
 @import "../../assets/colors/colors.scss";
-
 
 .signup-container {
     max-width: 460px;
@@ -37,4 +42,5 @@ import CommonInputs from "../../components/CommonInputs.vue";
     margin-top: auto;
     margin-bottom: auto;
 }
+
 </style>

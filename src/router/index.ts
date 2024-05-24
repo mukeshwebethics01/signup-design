@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Authlayout from '@/Layout/Authlayout.vue'
 // @ts-ignore
 import SignUp from '../views/SignUp/SignUp.vue'
+// @ts-ignore
+import SignupPassword from '../views/SignupPassword.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -18,9 +20,15 @@ children:[
     {
       path: '/confirm-email',
       name: 'confirm-email',
-// @ts-ignore
+   // @ts-ignore
       component: () => import('../views/ConfirmEmail.vue')
     },
+    {
+      path: '/signup-password',
+      name: 'signup-password',
+      component: SignupPassword
+    },
+  
   
 ]
 
