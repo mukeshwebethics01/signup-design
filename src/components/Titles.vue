@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2 class="h2tag text-center font-bold">{{ heading }}</h2>
-        <p class="ptag text-center text-base">{{ subheading }}</p>
+        <p class="ptag text-center text-base mt-1">{{ subheading }}</p>
     </div>
 </template>
 <script>

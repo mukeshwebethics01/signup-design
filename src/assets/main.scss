@@ -9,3 +9,20 @@
  box-shadow: none;
 }
 
+.p-password-input{
+margin-bottom: -12px;
+width: 100%;
+border-radius: 6px;
+}
+
+.p-password-input:focus{
+box-shadow: none;
+}
+
+.p-password-input::placeholder{
+color: #696C71;
+}
+.custom-progressbar .p-progressbar-value {
+    background-color: #384BD5; 
+}
+

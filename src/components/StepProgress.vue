@@ -16,7 +16,6 @@ import { ref } from 'vue';
 import 'primeicons/primeicons.css';
 import "primeflex/primeflex.css";
 import Steps from 'primevue/steps';
-
 export default {
     name: 'Steppers',
     components: {
@@ -29,7 +28,6 @@ export default {
             { icon: 'pi pi-circle-fill' },
             { icon: 'pi pi-circle-fill' }
         ]);
-
         return { items };
     }
 };
@@ -40,7 +38,6 @@ export default {
 .steper {
     margin-bottom: 90px;
     max-width: 266px;
-
     @include tab768 {
         margin-bottom: 45px;
     }
