@@ -49,9 +49,7 @@ children:[
       name: 'signup-on',
       component: SignupOn
     },
-  
-  
-  
+   
 ]
 
 }

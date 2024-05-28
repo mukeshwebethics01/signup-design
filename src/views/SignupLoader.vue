@@ -1,6 +1,4 @@
 <template>
-
-
     <div class="flex confirmemail w-full flex-column h-full justify-content-between">
         <div class="signup-container flex flex-column align-items-center">
             <div class="flex flex-column">

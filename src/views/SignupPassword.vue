@@ -11,13 +11,13 @@
                 <div class="flex flex-column gap-2 emailcontainer w-full flex">
                     <div class="card flex align-items-center justify-content-center">
                         <div class="flex flex-column w-full">
-                            <label class="font-medium" for="password">Password</label>
+                            <label class="font-medium text-base" for="password">Password</label>
                             <Password class="password-input" id="password" v-model="password" toggleMask
                                 placeholder="Password" />
                         </div>
                     </div>
                     <div class="flex flex-column w-full mt-4">
-                        <label class="font-medium" for="confirmpassword">Confirm password</label>
+                        <label class="font-medium text-base" for="confirmpassword">Confirm password</label>
                         <Password class="password-input" id="confirmpassword" v-model="confirmPassword" toggleMask
                             :feedback="false" placeholder="Confirm password" />
                     </div>

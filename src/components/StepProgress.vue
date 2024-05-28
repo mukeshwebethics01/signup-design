@@ -1,18 +1,19 @@
 <template>
-    <div class="card steper w-full ">
+    <div class="card steper w-full">
         <Steps :model="items" class="custom-steps" :readonly="true">
-            <template #item="{ item, active }">
+            <template #item="{ item, index }">
                 <span
-                    :class="['inline-flex align-items-center justify-content-center align-items-center border-circle setper-circle border-1 h-2rem w-2rem z-1 cursor-pointer']"
-                    :style="{ backgroundColor: active ? '#384BD5' : 'white', color: active ? 'white' : '', border: active ? 'none' : '1px solid #9CA3AF' }">
-                    <i :class="[item.icon, 'text-xs ']" :style="{ opacity: active ? 1 : 0.2 }" />
+                    :class="['inline-flex align-items-center justify-content-center align-items-center border-circle setper-circle  h-2rem w-2rem z-1 cursor-pointer']"
+                    :style="{ backgroundColor: index <= activeStep ? '#384BD5' : 'white', color: index <= activeStep ? 'white' : '', border: index <= activeStep ? 'none' : '1px solid #9CA3AF' }">
+                    <i :class="[getIcon(index), 'text-xs']" :style="{ opacity: index <= activeStep ? 1 : 0.2 }" />
                 </span>
             </template>
         </Steps>
     </div>
 </template>
 <script>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
 import 'primeicons/primeicons.css';
 import "primeflex/primeflex.css";
 import Steps from 'primevue/steps';
@@ -22,22 +23,45 @@ export default {
         Steps
     },
     setup() {
+        const route = useRoute();
         const items = ref([
-            { icon: 'pi pi-check' },
+            { icon: 'pi pi-check' },  // Default first step as checked
             { icon: 'pi pi-circle-fill' },
             { icon: 'pi pi-circle-fill' },
-            { icon: 'pi pi-circle-fill' }
+            { icon: 'pi pi-circle-fill' },
         ]);
-        return { items };
+
+        const activeStep = computed(() => {
+            if (route.path === '/confirm-email') {
+                return 1;
+            } else if (route.path === '/signup-password') {
+                return 2
+            } else if (route.path === '/signup-step-4') {
+                return 3
+            }
+            return 0;
+        });
+
+        const getIcon = (index) => {
+            if (index <= activeStep.value) {
+                return 'pi pi-check';
+            }
+            return items.value[index].icon;
+        };
+
+        return { items, activeStep, getIcon };
     }
 };
+
 </script>
+
 <style lang="scss" scoped>
 @import "../assets/mediaqueries/mediaqueries.scss";
 
 .steper {
     margin-bottom: 90px;
     max-width: 266px;
+
     @include tab768 {
         margin-bottom: 45px;
     }

@@ -15,7 +15,7 @@ export default {
     props: {
         placeholder: {
             type: String,
-            default: ''
+            default: '',
         }
     },
     data() {

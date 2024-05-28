@@ -1,7 +1,6 @@
 <template>
     <div class="flex confirmemail w-full flex-column h-full justify-content-between">
         <div class="signup-container flex flex-column align-items-center">
-            <Steppers />
             <StepProgress />
             <div class="flex flex-column">
                 <Title heading="Let’s Start Setting Up" subheading="Tell us little bit about you and your business" />
@@ -21,16 +20,15 @@
                     <div class="flex flex-column  mt-2">
                         <label class="font-medium text-lg" for="tenantURL">Tenant URL</label>
                         <div class="flex">
-                            <InputText class="stependinput url-input w-full focus:shadow-none" id="tenantURL" v-model="tenantURL"
-                                aria-describedby="tenantURL-help" placeholder="Enter tenant URL" />
+                            <InputText class="stependinput url-input w-full focus:shadow-none" id="tenantURL"
+                                v-model="tenantURL" aria-describedby="tenantURL-help" placeholder="Enter tenant URL" />
                             <span
-                                class="url-input-span border-left-none px-4 flex justify-content-center align-items-center font-medium">.webethics.com</span>
+                                class="url-input-span border-left-none px-4 flex justify-content-center align-items-center font-medium text-base">.webethics.com</span>
                         </div>
                     </div>
                     <router-link class="no-underline" to="/signup-loader">
                         <CommonButton class="mt-3" btnText=" Complete Sign Up" />
                     </router-link>
-
                 </div>
             </div>
         </div>

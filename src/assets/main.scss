@@ -1,4 +1,12 @@
 @import './base.css';
+@font-face {
+  font-family:"DMSans-Regular" ;
+  src: url("../assets/fonts/DMSans-Regular.ttf");
+}
+
+// body{
+// font-family: "DMSans-Regular", sans-serif;
+// }
 
 .p-inputotp-input {
   height: 40px;
@@ -25,4 +33,10 @@ color: #696C71;
 .custom-progressbar .p-progressbar-value {
     background-color: #384BD5; 
 }
+
+// .p-steps .p-steps-item:first-child::before {
+//     width: calc(50% + 1rem);
+//     transform: translateX(100%);
+//     border-color: rebeccapurple;
+// }
 
