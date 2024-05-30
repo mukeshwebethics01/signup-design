@@ -55,7 +55,7 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../assets/mediaqueries/mediaqueries.scss";
 
 .steper {
@@ -67,6 +67,17 @@ export default {
     }
 }
 
+.custom-steps {
+    .p-steps-item {
+        overflow: visible;
+
+        &:first-child {
+            span:before {
+                content: none;
+            }
+        }
+    }
+}
 
 .beforline {
     position: relative;
@@ -75,17 +86,12 @@ export default {
     &::before {
         content: " ";
         border-top: 1px solid #dee2e6;
-        width: 100%;
+        width: 36px;
         top: 50%;
-        left: -50%;
+        left: -35px;
         display: block;
         position: absolute;
         transform: translateY(-50%);
-    }
-
-    &:first-child::before {
-        // content: none;
-        /* Hide the before pseudo-element for the first step */
     }
 }
 </style>
