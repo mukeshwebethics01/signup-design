@@ -3,7 +3,7 @@
         <Steps :model="items" class="custom-steps" :readonly="true">
             <template #item="{ item, index }">
                 <span
-                    :class="['inline-flex align-items-center justify-content-center align-items-center border-circle setper-circle  h-2rem w-2rem z-1 cursor-pointer']"
+                    :class="['inline-flex beforline align-items-center justify-content-center align-items-center border-circle setper-circle  h-2rem w-2rem z-1 cursor-pointer']"
                     :style="{ backgroundColor: index <= activeStep ? '#384BD5' : 'white', color: index <= activeStep ? 'white' : '', border: index <= activeStep ? 'none' : '1px solid #9CA3AF' }">
                     <i :class="[getIcon(index), 'text-xs']" :style="{ opacity: index <= activeStep ? 1 : 0.2 }" />
                 </span>
@@ -64,6 +64,28 @@ export default {
 
     @include tab768 {
         margin-bottom: 45px;
+    }
+}
+
+
+.beforline {
+    position: relative;
+    z-index: 5 !important;
+
+    &::before {
+        content: " ";
+        border-top: 1px solid #dee2e6;
+        width: 100%;
+        top: 50%;
+        left: -50%;
+        display: block;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+
+    &:first-child::before {
+        // content: none;
+        /* Hide the before pseudo-element for the first step */
     }
 }
 </style>
