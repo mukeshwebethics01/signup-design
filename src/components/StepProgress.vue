@@ -3,7 +3,7 @@
         <Steps :model="items" class="custom-steps" :readonly="true">
             <template #item="{ item, index }">
                 <span
-                    :class="['inline-flex beforline align-items-center justify-content-center align-items-center border-circle setper-circle  h-2rem w-2rem z-1 cursor-pointer']"
+                    :class="['inline-flex beforline align-items-center justify-content-center align-items-center border-circle setper-circle  h-2rem w-2rem z-1 cursor-pointer', { 'active': index <= activeStep }]"
                     :style="{ backgroundColor: index <= activeStep ? '#384BD5' : 'white', color: index <= activeStep ? 'white' : '', border: index <= activeStep ? 'none' : '1px solid #9CA3AF' }">
                     <i :class="[getIcon(index), 'text-xs']" :style="{ opacity: index <= activeStep ? 1 : 0.2 }" />
                 </span>
@@ -11,12 +11,14 @@
         </Steps>
     </div>
 </template>
+
 <script>
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import 'primeicons/primeicons.css';
 import "primeflex/primeflex.css";
 import Steps from 'primevue/steps';
+
 export default {
     name: 'Steppers',
     components: {
@@ -52,11 +54,11 @@ export default {
         return { items, activeStep, getIcon };
     }
 };
-
 </script>
 
 <style lang="scss">
 @import "../assets/mediaqueries/mediaqueries.scss";
+@import "../assets/colors/colors.scss";
 
 .steper {
     margin-bottom: 90px;
@@ -92,6 +94,10 @@ export default {
         display: block;
         position: absolute;
         transform: translateY(-50%);
+    }
+
+    &.active::before {
+        border-top: 1px solid #031bcf;
     }
 }
 </style>

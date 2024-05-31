@@ -7,7 +7,7 @@
             </div>
             <div class="flex mt-4 flex-column gap-2 emailcontainer w-full flex ">
                 <div class="card">
-                    <ProgressBar mode="indeterminate" class="custom-progressbar" style="height: 8px"></ProgressBar>
+                    <ProgressBar mode="indeterminate" class="custom-progressbar" style="height: 10px"></ProgressBar>
                 </div>
             </div>
         </div>
@@ -23,17 +23,7 @@ const value = ref(null);
 <style lang="scss" scoped>
 @import "../assets/colors/colors.scss";
 
-.confirmemail {
-    max-width: 460px;
-}
 
-.signup-container {
-    max-width: 460px;
-    padding-inline: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-
-}
 
 .custom-progressbar {
     border-radius: 25px;

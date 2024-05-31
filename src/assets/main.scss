@@ -34,14 +34,19 @@ color: #696C71;
     background-color: #384BD5; 
 }
 
-// .p-steps .p-steps-item:first-child::before {
-//     width: calc(50% + 1rem);
-//     transform: translateX(100%);
-//     border-color: rebeccapurple;
-// }
-
 
 .p-steps .p-steps-item:before{
 display: none;
 }
 
+
+.confirmemail {
+    max-width: 460px;
+}
+
+.signup-container {
+    max-width: 460px;
+    padding-inline: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}

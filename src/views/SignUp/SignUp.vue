@@ -30,10 +30,5 @@ import CommonInputs from "../../components/CommonInputs.vue";
 @import "../../assets/mediaqueries/mediaqueries.scss";
 @import "../../assets/colors/colors.scss";
 
-.signup-container {
-    max-width: 460px;
-    padding-inline: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-}
+
 </style>

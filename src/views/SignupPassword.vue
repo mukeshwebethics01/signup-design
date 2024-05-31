@@ -46,15 +46,9 @@ const confirmPassword = ref(null);
 <style lang="scss" scoped>
 @import "../assets/colors/colors.scss";
 
-.confirmemail {
-    max-width: 460px;
-}
 
 .signup-container {
-    max-width: 460px;
-    padding-inline: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
+
 
     .chngeText {
         color: $lightGray;

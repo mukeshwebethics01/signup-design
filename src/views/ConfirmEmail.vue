@@ -9,7 +9,7 @@
       <div class="flex flex-column">
         <Title heading="Confirm Your Email" />
         <span class="mb-3 mt-1 emailtext text-center text-base">
-          We’ve sent a code to your email: <a href="#" class="no-underline">example@exam.com</a>
+          We’ve sent a code to your email: <a href="#" class="no-underline anchor-tag">example@exam.com</a>
         </span>
       </div>
       <div class="card flex justify-content-center email-inputs w-full">
@@ -39,25 +39,17 @@ const value = ref(null);
 <style lang="scss" scoped>
 @import "../assets/colors/colors.scss";
 
-.confirmemail {
-  max-width: 460px;
-}
+
 
 .signup-container {
-  max-width: 460px;
-  padding-inline: 20px;
-  margin-top: auto;
-  margin-bottom: auto;
 
   .chngeText {
     color: $lightGray;
   }
-
   .emailtext {
     color: $lightGray;
     line-height: 28px;
-
-    .emailtext a {
+    .anchor-tag {
       color: $themeBlue;
     }
   }
